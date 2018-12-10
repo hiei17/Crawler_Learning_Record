@@ -14,12 +14,14 @@ def get_params():
         "value": "san"
 
     }
-    # mark  字典传参 字典自动转参数对
+    # mark  字典传参 字典自动转参数对 中文也转义了
     str_params = urllib.parse.urlencode(params)
     print(str_params)   # wd=%E4%B8%AD%E6%96%87&key=zhang&value=san
 
     final_url = url + str_params
-    end_url = urllib.parse.quote(final_url, safe=string.printable)  # 中文转义
+
+    # mark urllib.parse.urlencode 已经转义了 这个不用了
+    # end_url = urllib.parse.quote(final_url, safe=string.printable)  # 中文转义
     response = urllib.request.urlopen(end_url)
     data = response.read().decode("utf-8")  # 二进制转字符串
    # print(data)

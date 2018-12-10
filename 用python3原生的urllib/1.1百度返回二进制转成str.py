@@ -7,7 +7,7 @@ def load_data():
     url = "http://www.baidu.com/"
 
     # response:http相应的对象 mark urllib.request 是 python3 自带了 是一切的基础
-    response = urllib.request.urlopen(url)  # http请求 get的请求
+    response = urllib.request.urlopen(url)  # http请求 没传参 就是 mark get的请求 如果有data=? 就是post
     print(response)
     # 读取内容 bytes类型
     data = response.read()
@@ -23,6 +23,11 @@ def load_data():
 
     # mark 百度返回的二进制(bytes) 需要转成字符串
     str_data = data.decode("utf-8")
+    # ,mark utf-8 会写在网页<head>里面
+    # < head >
+    #
+    # < meta http - equiv = "content-type" content = "text/html;charset=utf-8" >
+
     print(str_data)
 
     # mark 将数据写入文件
