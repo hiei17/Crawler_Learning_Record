@@ -10,6 +10,7 @@ def load_baidu():
     header = {
         #浏览器的版本
         "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
+        # 随便什么头
          "haha":"hehe"
     }
     request = urllib.request.Request(url, headers=header)
@@ -18,7 +19,7 @@ def load_baidu():
     # request = urllib.request.Request(url)
     # request.add_header("User-Agent","Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36")
 
-    # 请求网络数据
+    # mark 请求网络数据 urllib.request.urlopen 就不传url了 传request
     response = urllib.request.urlopen(request)
     # 之前写的这个
     # response = urllib.request.urlopen(url)
