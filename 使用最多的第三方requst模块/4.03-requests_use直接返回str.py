@@ -7,6 +7,8 @@ import requests
 url = 'http://www.baidu.com'
 response = requests.get(url)
 
+# 和.text()的区别在于 text()不能指明编码, 如果响应里面没有写明编码就直接猜一个
+#content.decode() 可以指明编码 如果没有就是utf-8
 # content属性 返回的类型 是bytes
 data = response.content.decode('utf-8')
 

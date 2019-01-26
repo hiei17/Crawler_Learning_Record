@@ -4,7 +4,9 @@ import requests
 
 
 # 这个 网址 返回的内容不是html 而是标准的json
-url = 'https://api.github.com/user'
+#url = 'https://api.github.com/user'
+url = 'https://www.okex.com/api/futures/v3/instruments'
+#url = 'https://www.google.com'
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36'
 }
@@ -22,4 +24,4 @@ response = requests.get(url, headers=headers)
 # json() mark 自动将json字符串 转换成字典或者列表
 data = response.json()
 
-print(data['message'])
+print(data)
